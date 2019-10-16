@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>整理收藏夹Html</title>
+	<link rel="stylesheet" href="css/icon-merge.css">
+	<link rel="stylesheet" href="css/collectBar.css">
+</head>
+<body>
+	<div class="collectBar_Wrap">
+		<!-- 整理收藏夹     ****      开始 -->
+		<div class="cb_HeaderHeight"></div>
+		<div class="cb_HeaderWrap">
+			<div class="cb_Header clear">
+				<p>整理收藏夹<p>
+				<!-- <ul>
+					<li><button>导入/导出收藏</button></li>
+					<li>
+						<div class="cb_HeaderSearch">
+							<img src="images/search.png ">
+							<input type="text" placeholder="查找我的收藏" />
+						</div>
+					</li>
+				</ul> -->
+			</div>
+			<div class="cb_HeaderBlank"></div>
+		</div>
+		<!-- 整理收藏夹     ****      结束 -->
+
+		<!-- 侧边栏     ****      开始 -->
+		<div class="cb_MainLeft">
+			<h3 class="cbml_Title clear">
+				<img src="images/wuxing.png">
+				<p>18294884602的网络收藏夹网络收藏夹</p>
+			</h3>
+			<ol class="cbml_Nav">
+				<li class="active">
+					<img src="images/scj.png">
+					收藏栏
+				</li>
+			</ol>
+		</div>
+		<!-- 侧边栏     ****      结束 -->
+		<div class="cb_MainRight">
+			<ul class="cbmr_List">
+				<li class="clear" >
+					<div class="cbOperation_Pic">
+						<i class="iconfont icon-editor cbmr_Editor"></i>
+						<i class="iconfont icon-close cbmr_Delete"></i>
+					</div>
+					<a href="javascript:void(0)" class="collectBarName">
+						<img src="images/blankPage.png " >
+						<p class="ModifyCon">
+							唐仁健主持召开十三届省政府第61次常务会议唐仁健主持召开十三届省政府第61次常务会议对全省安全生产工作再安排再部署唐仁健主持召开十三届省政府第61次常务会议唐仁健主持召开十三届省政府第61次常务会议对全省安全生产工作再安排再部署
+						</p>
+						<input type="text" name="cbmrZhi1" class="cbmrZhi1" value="唐仁健主持召开十三届省政府第61次常务会议唐仁健主持召开十三届省政府第61次常务会议对全省安全生产工作再安排再部署唐仁健主持召开十三届省政府第61次常务会议唐仁健主持召开十三届省政府第61次常务会议对全省安全生产工作再安排再部署" />
+						<b class="ModifyCon">http://www.seozixuewanghahahahah.com/</b>
+						<input type="text" name="cbmrZhi2" class="cbmrZhi2"  value="http://www.seozixuewanghahahahah.com/" />
+					</a>
+				</li>
+				<li class="clear">
+					<div class="cbOperation_Pic">
+						<i class="iconfont icon-editor cbmr_Editor"></i>
+						<i class="iconfont icon-close cbmr_Delete"></i>
+					</div>
+					<a href="javascript:void(0)" class="collectBarName">
+						<img src="images/blankPage.png " >
+						<p class="ModifyCon">
+							唐仁健主持召开十三届省政府第61次常务会议 对全省安全生产工作再安排再部署
+						</p>
+						<input type="text" name="cbmrZhi1" class="cbmrZhi1"  value="唐仁健主持召开十三届省政府第61次常务会议 对全省安全生产工作再安排再部署" />
+						<b class="ModifyCon">http://www.baidu.comhttp://www.baidu.com</b>
+						<input type="text" name="cbmrZhi2" class="cbmrZhi2"  value="http://www.baidu.comhttp://www.baidu.com" />
+					</a>
+				</li>
+				<li class="clear">
+					<div class="cbOperation_Pic">
+						<i class="iconfont icon-editor cbmr_Editor"></i>
+						<i class="iconfont icon-close cbmr_Delete"></i>
+					</div>
+					<a href="javascript:void(0)" class="collectBarName">
+						<img src="images/blankPage.png " >
+						<p class="ModifyCon">
+							唐仁健主持召开十三届省政府第61次常务会议 对全省安全生产工作再安排再部署
+						</p>
+						<input type="text" name="cbmrZhi1" class="cbmrZhi1"  value="唐仁健主持召开十三届省政府第61次常务会议 对全省安全生产工作再安排再部署" />
+						<b class="ModifyCon">http://www.baidu.com</b>
+						<input type="text" name="cbmrZhi2" class="cbmrZhi2"  value="http://www.baidu.com" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+	//删除
+	$(".cbmr_Delete").click(function(){
+		$(this).parent().parent("li").remove();
+	})
+	// 编辑
+	$(".cbmr_Editor").click(function(){
+		//debugger;
+		//获取当前li标签
+		var parObj = $(this).parent().parent();
+		//隐藏文字
+		$(this).parent().siblings().find(".ModifyCon").hide();
+		//显示Input
+		$(this).parent().siblings().find("input").show();
+		//全选文字
+		$(this).parent().siblings().children("input[name = 'cbmrZhi1']").select();
+
+		// input的宽度等于文字的长度
+		var ModifyCon_p = $(this).parent().siblings().children("p.ModifyCon").outerWidth();
+		var ModifyCon_b = $(this).parent().siblings().children("b.ModifyCon").outerWidth();
+		$("input[name = 'cbmrZhi1']").width(ModifyCon_p);
+		$("input[name = 'cbmrZhi2']").width(ModifyCon_b);
+
+		// 获取当前元素的文字内容
+		var Modify_Input1 = $(this).parent().siblings().children("input[name='cbmrZhi1']");
+		var Modify_Input2 = $(this).parent().siblings().children("input[name='cbmrZhi2']");
+		//获取网址名字和地址标签
+		var ModifyText_p = $(this).parent().siblings().children("p.ModifyCon");
+		var ModifyText_b = $(this).parent().siblings().children("b.ModifyCon");
+
+		/**
+	     * @param inputObj   点击的当前元素标题框子或网址地址框
+	     * @param assObj     赋值的p标签或者b标签
+	     */
+		function assignment(inputObj,assObj){
+			$(inputObj).on("keyup",function(){
+				if ($(this).val() != "" ) {
+					//修改后赋值
+					assObj.html(inputObj.val());
+				}else{
+					alert("不能为空 ！");
+				}
+			});
+		}
+		//标题文字修改后赋值
+		assignment(Modify_Input1,ModifyText_p);
+		//地址网址修改后赋值
+		assignment(Modify_Input2,ModifyText_b);
+		
+		//判断:当前元素是否是被筛选元素的子元素或者本身 
+	    jQuery.fn.isChildAndSelfOf = function(b){
+	    	return (this.closest(b).length > 0); 
+	    };
+	    $(document).click(function(event){
+	      if(!$(event.target).isChildAndSelfOf(parObj)){
+	        $(parObj).find("input").hide();
+	        $(parObj).find(".ModifyCon").show();
+	      }
+	    });
+
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,855 @@
+@charset "utf-8";
+* {box-sizing: content-box;margin: 0px;padding: 0px;}
+html {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;text-size-adjust: 100%;}
+body {color: #333;font-family: "Microsoft Yahei Font";font-size: 14px;}
+
+table {border-collapse: collapse;border-spacing: 0;font-size: inherit;}
+li {list-style: none;}
+dt+dd,dd,dt,ul,ol,p,span {
+	padding: 0px;
+	margin: 0px;
+	font-weight: normal;
+}
+button,input{border:none;outline: none;font-family: 'Microsoft Yahei Font' ;font-size: 14px;color: #444;}
+/****全局***/
+html,body{
+	position: relative;
+    height: 100%;
+}
+.grayBody{
+	background: #f9f9f9;
+}
+
+/** 	清除浮动 	开始**/
+.clear:after {
+	display: block;
+	clear: both;
+	content: ' ';
+}
+.clear {
+	zoom: 1;
+}
+/** 	清除浮动 	开始**/
+
+
+.collectBar_Wrap{
+	position: relative;
+	overflow: hidden;
+	min-width: 650px;
+}
+.cb_MainWrap{
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
+
+/*<!-- 整理收藏夹     ****      开始 -->*/
+
+.cb_HeaderHeight{
+    width: 100%;
+    height: 74px;
+}
+.cb_HeaderWrap{
+	background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    width: 100%;
+}
+.cb_Header{
+	padding: 15px 20px;
+	border-bottom: 1px solid #c8c9ca
+}
+.cb_Header p{
+	display: block;
+	float: left;
+	font-size: 25px;
+	height: 26px;
+	line-height: 26px;
+	color: #878c8d;
+}
+.cb_Header ul{
+	float: right;
+}
+.cb_Header ul li{
+	float: left;
+	margin-left: 15px;
+}
+.cb_Header ul li button{
+	cursor: pointer;
+	padding: 0px 14px;
+	height: 26px;
+	border: 1px solid #aaa;
+	color: #444;
+	border-radius: 3px;
+
+	background: -webkit-linear-gradient(#f9f9f9, #e5e5e5); 
+	background: -o-linear-gradient(#f9f9f9, #e5e5e5);
+	background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
+	background: linear-gradient(#f9f9f9, #e5e5e5);
+}
+.cb_Header ul li button:hover{
+	opacity: 0.85;
+}
+.cb_HeaderSearch{
+	position: relative;
+	overflow: hidden;
+	border-radius: 3px;
+}
+.cb_HeaderSearch input{
+	width: 165px;
+	padding-left: 35px;
+	height: 26px;
+	line-height: 25px;
+	border: 1px solid #aaa;
+	color: #444;
+	border-radius: 3px;
+}
+.cb_HeaderSearch img{
+	display: block;
+	position: absolute;
+	left: 8px;
+	top: 4px;
+	width: 20px;
+}
+.cb_HeaderBlank{
+	width: 100%;
+	height: 15px;;
+}
+
+/*<!-- 侧边栏     ****      开始 -->*/
+
+.cb_MainLeft{
+	position: fixed;
+	left: 0px;
+	top: 74px;
+	width: 200px;
+	border-right: 2px solid #e9edef;
+	height: 100%;
+}
+h3.cbml_Title{
+	padding-left: 15px;
+	color: #85bc64;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	font-weight: normal;
+}
+h3.cbml_Title img{
+	display: block;
+	float: left;
+	width: 14px;
+	float: left;
+	margin:7px 0px 0px 0px;
+}
+h3.cbml_Title p{
+	float: left;
+	padding-left: 2px;
+	width: 167px;
+	
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.cbml_Nav{
+	padding-top: 8px;
+}
+.cbml_Nav li{
+	height: 32px;
+	line-height: 32px;
+	padding-left: 35px;
+	overflow: hidden;
+	color: #444;
+}
+.cbml_Nav li.active{
+	background: #efefef;
+}
+.cbml_Nav li:hover{
+	background: #efefef;
+	cursor: pointer;
+}
+.cbml_Nav li img{
+	display: block;
+	width: 14px;
+	float: left;
+	margin:8.5px 4px 0px 0px;
+}
+/*<!-- 侧边栏     ****      结束 -->*/
+
+.cb_MainRight{
+	margin-left: 201px;
+}
+ul.cbmr_List{
+	overflow: hidden;
+	padding: 0px 0px 20px 0px;
+}
+ul.cbmr_List li{
+	padding: 0px 30px 0px 60px;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+}
+.cbOperation_Pic{
+	display: none;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	left: 13px;
+	top: 0px;
+}
+.cbOperation_Pic i{
+	display: block;
+	float: left;
+	color: #517490;
+	font-size: 20px;
+	width: 18px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.cbOperation_Pic i.icon-editor{
+	font-size: 18px;
+}
+.cbOperation_Pic i:hover{
+	color: #1a3f5d;
+}
+.collectBarName{
+	width: 100%;
+	float: left;
+	color: #444;
+	text-decoration: none;
+	display: block;
+}
+.collectBarName img{
+	display: block;
+	float: left;
+	width: 14px;
+	margin:8px 5px 0px 0px;
+}
+.collectBarName p{
+	float: left;
+	max-width: 1200px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.collectBarName b{
+	display: block;
+	font-weight: normal;
+	font-style: normal;
+	float: right;
+	color: #c0bfbc;
+	width: 250px;
+	text-align:right;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.collectBarName input[type='text']{
+	float: left;
+	height: 28px;
+	padding:0px 20px 0px 10px;
+	line-height: 28px;
+	margin-right: 10px;
+	border: 1px solid #a4d1ff;
+	border-radius: 4px;
+	display: none;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.collectBarName input.cbmrZhi1{
+	max-width: 690px;
+}
+.collectBarName input.cbmrZhi2{
+	max-width: 218px;
+}
+.collectBarName input:focus{
+	border-color: #b0c9e2;
+}
+/*hover*/
+ul.cbmr_List li:hover{
+	background: #f4f6f7;
+}
+ul.cbmr_List li:hover .cbOperation_Pic{
+	display: block;
+}
+
+
+/*历史记录      ****   开始*/
+
+.historical_Header ul{
+	padding-right: 300px;
+}
+.hDivider{
+	display: block;
+	height: 30px;
+	width: 1px;
+	background: #e8e8e8;
+	margin: 0px 10px;
+}
+.historical_MainRight ul.cbmr_List{
+	padding-right: 285px;
+}
+
+
+/*历史记录      ****   结束*/
+
+/*左边菜单栏背景色*/
+
+/*<!-- 侧边栏     ****      开始 -->*/
+
+.oftenStytemLeft{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 200px;
+	height: 100%;
+	background: #f9f9f9;
+	box-shadow: 3px 0 5px -1px #c7c7c7;
+}
+/*二级菜单       结束*/
+
+ul.hMenuWrap {
+	margin: 0;
+}
+li.LevelOneNav {
+	width: 100%;
+	height: 40px;
+    line-height: 40px;
+    background-color: #0c918e;
+    color: #fff;
+}
+i.icon-BreadCrumbs{
+	float: left;
+	width: 22px;
+	height: 40px;
+	margin: 0px 20px;
+	font-size: 24px;
+}
+i.icon-solidLeftSel{
+	float: right;
+	margin-right: 12px;
+}
+span.onMayMenu{
+	float: left;
+	display: block;
+	width: 110px;
+}
+i.iconRotate {
+    transform: rotate(90deg);
+    transition: transform .5s;
+}
+.s-firstNav{
+	overflow: hidden;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.s-firstDrop,
+.s-secondDrop {
+    /*display: none;*/
+}
+.s-secondNav{
+	padding-left: 40px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.s-secondNav span.onMayMenu{
+	margin: 0;padding: 0;
+}
+.s-secondNav > img{
+    float: left;
+    margin-top: 9px;
+    margin-right: 8px;
+    width: 24px;
+}    
+.s-secondDrop {
+    padding-left: 70px;
+}
+.s-thirdItem a{
+	color: #fff;
+}
+ul.s-firstDrop li{
+	color: #717171;
+	font-size: 16px;
+}
+ul.s-firstDrop li.active{
+	color: #0c918e;
+}
+ul.s-firstDrop li:hover{
+	color: #0c918e;
+}
+
+/*二级菜单       结束*/
+
+/*软件菜单*/
+.softwareList{
+	padding: 40px 30px 40px 50px;
+}
+
+.softwareList ul li{
+	width: 160px;
+	height: 50px;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 30px;
+	margin-right: 20px;
+}
+dl.softwareBlock dd{
+	width: 50px;
+	height: 50px;
+}
+dl.softwareBlock dd i{
+	display: block;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+}
+dl.softwareBlock dd,dl.softwareBlock dt{
+	float: left;
+}
+dl.softwareBlock dt{
+	padding-left: 15px;
+	width: 95px;
+}
+dl.softwareBlock dt h5,dl.softwareBlock dt h6{
+	width: 100%;
+	font-weight: normal;
+	font-size: 14px;
+	height: 18px;
+	line-height: 18px;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+dl.softwareBlock dt h5{
+	color: #555b56;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+dl.softwareBlock dt h6{
+	color: #a9aba9;
+}
+.icon-Office{
+	color: #e60101;
+}
+.icon-AdobePs{
+	color: #2bccfb;
+}
+
+/*微应用   主要内容*/
+
+.applicationListWrap{
+	padding: 30px 30px 30px 40px;
+}
+.applicationListWrap li{
+	width: 184px;
+	height: 230px;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 12px;
+	background: #fff;
+	box-shadow: 0px 0px 0px #888888;
+}
+a.applicationList{
+	text-decoration: none;
+	display: block;
+	width: 184px;
+	height: 230px;
+	text-align: center;
+	overflow: hidden;
+}
+a.applicationList img{
+	display: block;
+	width: 62px;
+	height: 62px;
+	margin: 18px auto 30px auto;
+}
+a.applicationList h3,a.applicationList h4{
+	font-weight: normal;
+}
+.blockSel_Line a.applicationList h3{
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #676767;
+}
+a.applicationList h4{
+	font-size: 16px;
+	color: #868686;
+}
+.applicationList_Con a.applicationList h3{
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #676767;
+}
+
+
+/*<!-- 建议反馈   开始 -->*/
+
+.adviceFeedback{
+	width: 800px;
+	padding: 30px 100px 40px 100px;
+	border-radius: 10px;
+	margin:30px auto;
+	background: #fff;
+}
+.adviceFeedback h2{
+	width: 100%;
+	text-align: center;
+	font-weight: 600;
+	color: #6c6c6c;
+	font-size:30px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 30px;
+	letter-spacing: 1px;
+}
+ol.radioChoose{
+	margin-bottom: 20px;
+}
+ol.radioChoose li{
+	float: left;
+	margin-right: 30px;
+	color:#6d6d6d;
+	height: 20px;
+	line-height: 20px;
+}
+ol.radioChoose li label{
+	clear: both;
+	overflow: hidden;
+    cursor: pointer;
+}
+ol.radioChoose li input{
+	float: left;
+	margin-right: 8px;
+	margin-top: 4px;
+}
+/*填写内容*/
+.radioChooseText{
+	padding:10px 10px 30px 10px;
+	height: 418px;
+	border:1px solid #d4d4d4;
+	overflow: hidden;
+	position: relative;
+}
+.radioChooseText textarea{
+	border:none;outline: none;
+	font-family: 'Microsoft Yahei Font' ;
+	font-size: 14px;
+	color: #444;
+	line-height: 22px;
+	width: 100%;
+	height: 100%;
+}
+.radioChooseText b{
+	font-weight: normal;
+	font-style:normal;
+	display: block;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	text-align:right;
+	position: absolute;
+	right: 10px;
+	bottom:10px;
+	color:#6d6d6d;
+}
+.radioChooseSub{
+	text-align:center;
+	padding-top: 20px;
+}
+.radioChooseSub button{
+	width: 204px;
+	height: 55px;
+	border-radius: 5px;
+	background: #0c918e;
+	text-align:center;
+	line-height: 55px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin: 0px 15px;
+}
+.radioChooseSub button.cancel{
+	background: #e8e8e8;
+	color: #444;
+}
+.radioChooseSub button:hover{
+	opacity: 0.85;
+}
+
+/*<!-- 建议反馈   结束 -->*/
+
+/*系统消息    开始*/
+.stytemMassage_Wrap{
+	width: 920px;
+	padding: 30px 40px 40px 40px;
+	border-radius: 10px;
+	margin:30px auto;
+	background: #fff;
+}
+.stytemMassage_Wrap h2{
+	width: 100%;
+	text-align: center;
+	font-weight: 600;
+	color: #6c6c6c;
+	font-size:30px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 30px;
+	letter-spacing: 1px;
+}
+.stytemMassage_List{
+	min-height: 390px;
+}
+.stytemMassage_List li{
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+.stytemMassage_List li a{
+	text-decoration: none;
+	display: block;
+	color: #6d6d6d;
+	font-size: 16px;
+}
+.stytemMassage_List li a p{
+	float: left;
+	width: 765px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.stytemMassage_List li a span{
+	float: right;
+	width: 126px;
+	text-align:right;
+}
+
+/*系统消息    结束*/
+
+/*分页*/
+.layuiPages{
+	width: 100%;
+	text-align:center;
+	padding-top:50px;
+}
+.layuiPages .layui-laypage{
+	margin: 0;
+	padding: 0;
+}
+
+/*帮助页    开始*/
+.Help_HeaderHeight{
+	height: 57px;
+	overflow: hidden;
+}
+.Help_MainLeft{
+	position: fixed;
+	left: 0px;
+	top: 57px;
+	width: 200px;
+	height: 100%;
+	background: #f9f9f9;
+	box-shadow: 3px 0 5px -1px #c7c7c7;
+}
+.Help_Nav{
+	padding-top: 10px;
+}
+.Help_Nav li{
+	height: 32px;
+	line-height: 32px;
+	padding-left: 35px;
+	overflow: hidden;
+	color: #444;
+}
+.Help_Nav li.active{
+	background: #0c918e;
+	color: #fff;
+}
+.Help_Nav li:hover{
+	background: #0c918e;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+
+/*模块下拉Html      开始*/
+
+#target{
+	position: relative;
+}
+.blockSel_Wrap{
+	padding:15px 30px;
+}
+.blockSel_Wrap ol{
+	position: relative;
+}
+li.blockSel_Line{
+	margin-bottom: 10px;
+	cursor: all-scroll;
+}
+.blockSelList_Wrap{
+	display: none;
+}
+.blockSelList_Wrap.active{
+	display: block;
+}
+.blockSelList_Wrap li{
+	width: 184px;
+	height: 230px;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 12px;
+	background: #fff;
+	box-shadow: 0px 0px 0px #888888;
+}
+h3.blockSel_Type{
+	background: #f3f8fb;
+	border: 1px solid #d9e0e6;
+	font-weight: normal;
+	color: #798091;
+	height: 33px;
+	line-height: 33px;
+	padding-left: 18px;
+	padding-right: 30px;
+	cursor: pointer;
+	font-size: 16px;
+}
+h3.blockSel_Type i{
+	float: right;
+	color: #6c7073;
+	font-size: 20px;
+	font-weight: 600;
+}
+.blockSelList_Wrap{
+	padding:25px 10px;
+	background: #f5f5f5;
+	border: 1px solid #d9e0e6;
+	border-top: none;
+}
+/*插件修改*/
+.blockSel_Line.lobipanel>.panel-heading .dropdown{
+	display: none;
+}
+.blockSel_Line.lobipanel>.panel-heading{
+	padding: 0;margin: 0;
+}
+.blockSel_Line.lobipanel h3{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+/*模块下拉Html         结束*/
+
+
+
+/*机器人VTP         结束*/
+
+.robotList_Wrap{
+	padding: 40px 60px;
+	background: #f9f9f9;
+}
+.robotList_Con a.applicationList h3{
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #676767;
+}
+.robotList_Con a.applicationList h4{
+	font-size: 16px;
+	color: #868686;
+}
+.robotList_Con li{
+	width: 184px;
+	height: 230px;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 12px;
+	background: #fff;
+	box-shadow: 0px 0px 0px #888888;
+}
+
+/*机器人VTP         结束*/
+
+
+
+
+
+/*屏幕适应*/
+@media screen and (min-width:0px) and (max-width:798px){
+	.collectBarName p{
+		max-width: 85px;
+	}
+	.collectBarName input.cbmrZhi1 {
+	    max-width: 84px;
+	}
+}
+@media screen and (min-width:799px) and (max-width:999px){
+	.collectBarName p{
+		max-width: 230px;
+	}
+	.collectBarName input.cbmrZhi1 {
+	    max-width: 184px;
+	}
+}
+@media screen and (min-width:1000px) and (max-width:1199px){
+	.collectBarName p{
+		max-width: 400px;
+	}
+	.collectBarName input.cbmrZhi1 {
+	    max-width: 320px;
+	}
+}
+@media screen and (min-width:1200px) and (max-width:1365px){
+	.collectBarName p{
+		max-width: 600px;
+	}
+	.collectBarName input.cbmrZhi1 {
+	    max-width: 550px;
+	}
+}
+@media screen and (min-width:1366px) and (max-width:1459px){
+	.collectBarName p{
+		max-width: 730px;
+	}
+	.collectBarName input.cbmrZhi1 {
+	    max-width: 666px;
+	}
+}
+@media screen and (min-width:1460px) and (max-width:1559px){
+	.collectBarName p{
+		max-width: 800px;
+	}
+}
+@media screen and (min-width:1560px) and (max-width:1659px){
+	.collectBarName p{
+		max-width: 920px;
+	}
+}
+@media screen and (min-width:1660px) and (max-width:1759px){
+	.collectBarName p{
+		max-width: 1000px;
+	}
+}
+@media screen and (min-width:1760px) and (max-width:1859px){
+	.collectBarName p{
+		max-width: 920px;
+	}
+}
+
+
+
